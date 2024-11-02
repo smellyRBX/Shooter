@@ -8,7 +8,7 @@ namespace EnemyScripts {
 		public override GameObject Spawn() {
 			GameObject newEnemy = base.Spawn();
 
-			newEnemy.transform.position = new Vector3(11.5f, Random.Range(0f, 8.5f), 0);
+			newEnemy.transform.position = new Vector3(11.5f, Random.Range(0f, 5f), 0);
 			
 			return newEnemy;
 		}
@@ -16,7 +16,7 @@ namespace EnemyScripts {
 		public override void Update() {
 			_sineTimer += Time.deltaTime;
 			
-			transform.Translate(new Vector3(1, Mathf.Sin(_sineTimer * 2f) * 3f, 0) * (Time.deltaTime * 2.5f));
+			transform.Translate(new Vector3(-1, Mathf.Sin(_sineTimer * 2f) * 1.5f, 0) * (Time.deltaTime * 2.5f));
 			
 			if (transform.position.x < -11f) {
 				Destroy(gameObject);
