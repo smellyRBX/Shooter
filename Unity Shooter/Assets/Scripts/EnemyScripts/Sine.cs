@@ -3,12 +3,12 @@
 namespace EnemyScripts {
 	public class Sine : Enemy {
 
-		private float _sineTimer = 0;
+		private float _sineTimer;
 		
 		public override GameObject Spawn() {
 			GameObject newEnemy = base.Spawn();
 
-			newEnemy.transform.position = new Vector3(11.5f, Random.Range(0f, 5f), 0);
+			newEnemy.transform.position = new Vector3(11.5f, Random.Range(-2f, 2f), 0);
 			
 			return newEnemy;
 		}
