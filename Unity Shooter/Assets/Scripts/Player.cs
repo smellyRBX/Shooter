@@ -32,11 +32,11 @@ public class Player : MonoBehaviour {
 		Vector3 setPosition = transform.position + translate;
 		
 		// limit to bottom half of the screen
-		setPosition.y = Mathf.Clamp(setPosition.y, -4.5f, 0);
+		setPosition.y = Mathf.Clamp(setPosition.y, -3.5f, 0);
 
 		transform.position = setPosition;
 		
-		if (transform.position.x > 11.5f || transform.position.x <= -11.5f) {
+		if (transform.position.x > 10f || transform.position.x <= -10f) {
 			transform.position = new Vector3(transform.position.x * -1,
 				transform.position.y, 0);
 		}
