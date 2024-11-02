@@ -2,12 +2,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 	public GameObject player;
-	public Enemy[] enemyList;
+	public GameObject[] enemyList;
 
 	// Start is called before the first frame update
 	private void Start() {
 		Instantiate(player, transform.position, Quaternion.identity);
-		InvokeRepeating(nameof(CreateEnemy), 1f, 3f);
 	}
 	
 	private void Update() {
@@ -15,7 +14,8 @@ public class GameManager : MonoBehaviour {
 	}
 
 	private void CreateEnemy(float deltaTime) {
-		foreach (Enemy enemyData in enemyList) {
+		foreach (GameObject enemyObj in enemyList) {
+			Enemy enemyData = enemyObj.GetComponent<Enemy>();
 			enemyData.spawnTimer -= deltaTime;
 			
 			if (enemyData.spawnTimer <= 0) {
