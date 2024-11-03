@@ -1,3 +1,3 @@
 school project<br/>
-john lawrence<br/>
-daniel sanchez
+john lawrence - sprites <br/>
+daniel sanchez - code
