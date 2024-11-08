@@ -2,9 +2,10 @@ using UnityEngine;
 
 namespace EnemyScripts {
 	public class Cloud : Enemy {
-		
+		private const float Speed = 35f;
+
 		public override GameObject Spawn() {
-			GameObject newEnemy = Instantiate(gameObject, new Vector3(Random.Range(-9f, 9f), 9f + 30f, 5),Quaternion.identity);
+			GameObject newEnemy = Instantiate(gameObject, new Vector3(Random.Range(-9f, 9f), 9f + 5f, 5),Quaternion.identity);
 			
 			float tempValue = Random.Range(2f, 7f);
 			transform.localScale = new Vector3(tempValue, tempValue, tempValue);
@@ -15,7 +16,7 @@ namespace EnemyScripts {
 		}
 		
 		public override void Update() {
-			transform.Translate(new Vector3(0, -1, 0) * (Time.deltaTime * 3f));
+			transform.Translate(new Vector3(0, -1, 0) * (Time.deltaTime * Speed));
 			if (transform.position.y < -8.5f) {
 				Destroy(gameObject);
 			}
