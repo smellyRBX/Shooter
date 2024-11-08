@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e7f1dac15e44c244bba73a2641c37322, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.17634347}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -94,9 +94,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5384583206800835173}
   - component: {fileID: 3284633216226962902}
-  - component: {fileID: 927734976701350021}
   - component: {fileID: 7195826921331342620}
   - component: {fileID: 2152150420116591799}
+  - component: {fileID: 7954775096686898581}
   m_Layer: 0
   m_Name: Cloud
   m_TagString: Untagged
@@ -113,7 +113,7 @@ Transform:
   m_GameObject: {fileID: 5117848911870012151}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4.859325, y: 4.859325, z: 4.859325}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 914167500150351540}
@@ -128,23 +128,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5117848911870012151}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &927734976701350021
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5117848911870012151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0231a25f3bc7c834c8c770c5587320ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lives: 3
-  explosionPrefab: {fileID: 8758853470596499124, guid: 13167d69a20153d41905aa007b5bc39d, type: 3}
-  spawnRate: 3
-  spawnTimer: 0.31942734
-  spriteRenderer: {fileID: 2877222082291262125}
 --- !u!58 &7195826921331342620
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -182,3 +165,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7954775096686898581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5117848911870012151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b63014ce1293014098b0649b0749797, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lives: 3
+  explosionPrefab: {fileID: 8758853470596499124, guid: 13167d69a20153d41905aa007b5bc39d, type: 3}
+  spawnRate: 0.46
+  spawnTimer: 0.18609636
+  spriteRenderer: {fileID: 2877222082291262125}

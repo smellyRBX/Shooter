@@ -6,7 +6,7 @@ namespace EnemyScripts {
 		public float spawnRate;
 		[HideInInspector] public float spawnTimer;
 	
-		[SerializeField] private SpriteRenderer spriteRenderer;
+		public SpriteRenderer spriteRenderer;
 	
 		public virtual GameObject Spawn() {
 			GameObject newEnemy = Instantiate(gameObject, new Vector3(Random.Range(-9f, 9f), 9f, 0),Quaternion.identity);
@@ -21,7 +21,7 @@ namespace EnemyScripts {
 			}
 		}
 
-		private void OnTriggerEnter2D(Collider2D other) {
+		public virtual void OnTriggerEnter2D(Collider2D other) {
 			if (other.CompareTag("Player")) {
 				Player playerObj = other.GetComponent<Player>();
 				playerObj.TakeDamage(1);
