@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 5384583206800835173}
   - component: {fileID: 3284633216226962902}
   - component: {fileID: 927734976701350021}
-  - component: {fileID: 1521604365244786014}
+  - component: {fileID: 7195826921331342620}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -139,19 +139,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0231a25f3bc7c834c8c770c5587320ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lives: 3
+  explosionPrefab: {fileID: 0}
   spawnRate: 3
   spawnTimer: 0
   spriteRenderer: {fileID: 2877222082291262125}
---- !u!135 &1521604365244786014
-SphereCollider:
+--- !u!58 &7195826921331342620
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5117848911870012151}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}

@@ -1,12 +1,11 @@
 using UnityEngine;
 
-public class Player : MonoBehaviour {
+public class Player : Entity {
 	// its access level: public or private
 	// its type: int (5, 8, 36, etc.), float (2.5f, 3.7f, etc.)
 	// its name: speed, playerSpeed --- Speed, PlayerSpeed
 	// optional: give it an initial value
 	private float _speed;
-	public int lives = 3;
 	public int score;
 	private float _horizontalInput;
 	private float _verticalInput;

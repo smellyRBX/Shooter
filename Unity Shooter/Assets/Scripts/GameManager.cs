@@ -1,9 +1,12 @@
+using EnemyScripts;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 	public GameObject player;
 	public GameObject[] enemyList;
 
+	private int _score;
+	
 	// Start is called before the first frame update
 	private void Start() {
 		Instantiate(player, transform.position, Quaternion.identity);
@@ -23,5 +26,9 @@ public class GameManager : MonoBehaviour {
 				enemyData.Spawn();
 			}
 		}
+	}
+
+	public void AddScore(int add) {
+		_score += add;
 	}
 }
