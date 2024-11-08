@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour {
 	private void Start() {
 		Instantiate(player, transform.position, Quaternion.identity);
 		_score = 0;
-		//scoreText.text = "Score: " + _score;
+		AddScore(0);
 	}
 	
 	private void Update() {
@@ -35,5 +35,6 @@ public class GameManager : MonoBehaviour {
 
 	public void AddScore(int add) {
 		_score += add;
+		scoreText.text = "Score: " + _score;
 	}
 }
