@@ -24,7 +24,7 @@ namespace EnemyScripts {
             GameObject gameManager = GameObject.Find("GameManager");
             GameManager gm = gameManager.GetComponent<GameManager>();
             gm.AddScore(1);
-            Kill();
+            Destroy(gameObject);
         }
     }
 }
