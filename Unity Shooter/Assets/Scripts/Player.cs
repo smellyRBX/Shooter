@@ -1,20 +1,20 @@
 using UnityEngine;
 
 public class Player : Entity {
-	// its access level: public or private
-	// its type: int (5, 8, 36, etc.), float (2.5f, 3.7f, etc.)
-	// its name: speed, playerSpeed --- Speed, PlayerSpeed
-	// optional: give it an initial value
 	private float _speed;
 	public int score;
 	private float _horizontalInput;
 	private float _verticalInput;
+
+	private const float HorizontalScreenSize = 10f;
+	private const float VerticalScreenSize = 3.5f;
 
 	public GameObject bullet;
 
 	// Start is called before the first frame update
 	private void Start() {
 		_speed = 5f;
+		lives = 3;
 	}
 
 	// Update is called once per frame
@@ -31,11 +31,11 @@ public class Player : Entity {
 		Vector3 setPosition = transform.position + translate;
 		
 		// limit to bottom half of the screen
-		setPosition.y = Mathf.Clamp(setPosition.y, -3.5f, 0);
+		setPosition.y = Mathf.Clamp(setPosition.y, -VerticalScreenSize, 0);
 
 		transform.position = setPosition;
 		
-		if (transform.position.x > 10f || transform.position.x <= -10f) {
+		if (transform.position.x > HorizontalScreenSize || transform.position.x <= -HorizontalScreenSize) {
 			transform.position = new Vector3(transform.position.x * -1,
 				transform.position.y, 0);
 		}

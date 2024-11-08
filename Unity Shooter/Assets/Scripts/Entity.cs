@@ -16,6 +16,6 @@ public class Entity : MonoBehaviour {
 
     protected virtual void Kill() {
         Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 }
