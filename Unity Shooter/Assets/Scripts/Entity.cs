@@ -8,12 +8,14 @@ public class Entity : MonoBehaviour {
 
     public GameObject explosionPrefab;
 
-    public virtual void TakeDamage(int damage) {
+    public virtual bool TakeDamage(int damage) {
         lives -= damage;
         
         if (lives <= 0) {
             Kill();
         }
+        
+        return lives <= 0;
     }
 
     protected virtual void Kill() {

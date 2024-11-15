@@ -10,20 +10,35 @@ public class GameManager : MonoBehaviour {
 	public bool gameOver;
 	
 	public TextMeshProUGUI scoreText;
+	public GameObject gameOverText;
+	public GameObject restartText;
+	public TextMeshProUGUI livesText;
 
 	public AudioClip music;
 
 	private int _score;
+	private Player _playerData;
 	
 	// Start is called before the first frame update
 	private void Start() {
 		//AudioSource.PlayClipAtPoint(music, player.transform.position);
+		gameOverText.SetActive(false);
+		restartText.SetActive(false);
 		
 		gameOver = false;
 		
-		Instantiate(player, transform.position, Quaternion.identity);
+		GameObject playerObj = Instantiate(player, transform.position, Quaternion.identity);
+		_playerData = playerObj.GetComponent<Player>();
+		_playerData.lives = 3;
+		
 		_score = 0;
 		AddScore(0);
+	}
+
+	public void EndGame() {
+		gameOver = true;
+		gameOverText.SetActive(true);
+		restartText.SetActive(true);
 	}
 
 	private void Restart() {
@@ -33,6 +48,7 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	private void Update() {
+		livesText.text = "Lives: " + _playerData.lives;
 		CreateEnemy(Time.deltaTime);
 		Restart();
 	}

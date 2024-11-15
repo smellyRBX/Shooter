@@ -27,11 +27,13 @@ namespace EnemyScripts {
 				playerObj.TakeDamage(1);
 				Kill();
 			}else if (other.CompareTag("Bullet")) {
+				Destroy(other.gameObject);
+
+				if (!TakeDamage(1)) return;
+				
 				GameObject gameManager = GameObject.Find("GameManager");
 				GameManager gm = gameManager.GetComponent<GameManager>();
 				gm.AddScore(5);
-				Destroy(other.gameObject);
-				Kill();
 			}
 		}
 	}

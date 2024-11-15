@@ -140,10 +140,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0231a25f3bc7c834c8c770c5587320ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 3
+  lives: 1
   explosionPrefab: {fileID: 8758853470596499124, guid: 13167d69a20153d41905aa007b5bc39d, type: 3}
   spawnRate: 3
-  spawnTimer: 0.31942734
+  spawnTimer: 1.6087431
   spriteRenderer: {fileID: 2877222082291262125}
 --- !u!58 &7195826921331342620
 CircleCollider2D:

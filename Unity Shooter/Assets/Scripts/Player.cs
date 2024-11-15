@@ -1,8 +1,9 @@
+using TMPro;
 using UnityEngine;
 
 public class Player : Entity {
 	private float _speed;
-	public int score;
+	
 	private float _horizontalInput;
 	private float _verticalInput;
 
@@ -10,7 +11,7 @@ public class Player : Entity {
 	private const float VerticalScreenSize = 3.5f;
 
 	public GameObject bullet;
-	
+
 	public AudioClip powerUpSound;
 	public AudioClip powerDownSound;
 	public AudioClip shootSound;
@@ -56,5 +57,13 @@ public class Player : Entity {
 			AudioSource.PlayClipAtPoint(shootSound, transform.position);
 			Instantiate(bullet, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
 		}
+	}
+
+	protected override void Kill() {
+		base.Kill();
+		
+		GameObject gameManager = GameObject.Find("GameManager");
+		GameManager gm = gameManager.GetComponent<GameManager>();
+		gm.EndGame();
 	}
 }
