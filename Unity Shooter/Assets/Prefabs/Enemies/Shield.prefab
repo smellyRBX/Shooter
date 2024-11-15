@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 62c6fb10f20e6824d89a9d8c059524e6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8915eb8fb80a76b44941b73a2aa26a93, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -96,9 +96,9 @@ GameObject:
   - component: {fileID: 4979888533932209322}
   - component: {fileID: 6744812598105362757}
   - component: {fileID: 658268593871258982}
-  - component: {fileID: 305409958810461899}
+  - component: {fileID: 8274962154447916769}
   m_Layer: 0
-  m_Name: Coin
+  m_Name: Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -165,7 +165,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &305409958810461899
+--- !u!114 &8274962154447916769
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -174,11 +174,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2580753757482753185}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26cd294051cc2904cb9630322f9fba94, type: 3}
+  m_Script: {fileID: 11500000, guid: 85e92303803e4507b4265d0248808f26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 3
   explosionPrefab: {fileID: 7145195255819634246, guid: b223d569ea445254b9ab8700a0ab7d03, type: 3}
-  spawnRate: 3.99
-  spawnTimer: 1.3096341
+  spawnRate: 10
+  spawnTimer: 7.4658012
   spriteRenderer: {fileID: 5344425864008948262}

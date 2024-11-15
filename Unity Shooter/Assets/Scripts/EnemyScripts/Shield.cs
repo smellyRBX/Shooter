@@ -2,7 +2,7 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace EnemyScripts {
-    public class Coin : Enemy {
+    public class Shield : Enemy {
         
         public override GameObject Spawn() {
             GameObject newEnemy = Instantiate(gameObject, new Vector3(Random.Range(-9f, 9f), Random.Range(-3f, 0f), 0),Quaternion.identity);

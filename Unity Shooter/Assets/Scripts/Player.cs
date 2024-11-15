@@ -10,6 +10,10 @@ public class Player : Entity {
 	private const float VerticalScreenSize = 3.5f;
 
 	public GameObject bullet;
+	
+	public AudioClip powerUpSound;
+	public AudioClip powerDownSound;
+	public AudioClip shootSound;
 
 	// Start is called before the first frame update
 	private void Start() {
@@ -49,6 +53,7 @@ public class Player : Entity {
 	private void Shooting() {
 		//SPACE - Create a bullet
 		if (Input.GetKeyDown(KeyCode.Space)) {
+			AudioSource.PlayClipAtPoint(shootSound, transform.position);
 			Instantiate(bullet, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
 		}
 	}
