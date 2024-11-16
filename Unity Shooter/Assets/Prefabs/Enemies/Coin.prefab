@@ -182,3 +182,4 @@ MonoBehaviour:
   spawnRate: 3.99
   spawnTimer: 1.3096341
   spriteRenderer: {fileID: 5344425864008948262}
+  constantSpawn: 1

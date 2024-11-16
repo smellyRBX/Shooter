@@ -1,7 +1,9 @@
+using System;
 using EnemyScripts;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour {
 	public GameObject player;
@@ -16,6 +18,8 @@ public class GameManager : MonoBehaviour {
 
 	private int _score;
 	private Player _playerData;
+	
+	private float _timer;
 	
 	// Start is called before the first frame update
 	private void Start() {
@@ -46,6 +50,8 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	private void Update() {
+		_timer += Time.deltaTime;
+		
 		livesText.text = "Lives: " + _playerData.lives;
 		CreateEnemy(Time.deltaTime);
 		Restart();
@@ -61,7 +67,16 @@ public class GameManager : MonoBehaviour {
 			enemyData.spawnTimer -= deltaTime;
 			
 			if (enemyData.spawnTimer <= 0) {
-				enemyData.spawnTimer = enemyData.spawnRate;
+				print(_timer/100f);
+
+				float addTimer = (enemyData.spawnRate + Random.Range(-2f, 2f)) - (_timer / 100f);
+				if (enemyData.constantSpawn) {
+					addTimer = enemyData.spawnRate;
+				}
+
+				addTimer = Math.Max(addTimer, 0.1f);
+				
+				enemyData.spawnTimer = addTimer;
 				enemyData.Spawn();
 			}
 		}

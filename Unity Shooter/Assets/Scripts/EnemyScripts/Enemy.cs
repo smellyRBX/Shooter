@@ -7,6 +7,7 @@ namespace EnemyScripts {
 		[HideInInspector] public float spawnTimer;
 	
 		public SpriteRenderer spriteRenderer;
+		public bool constantSpawn;
 	
 		public virtual GameObject Spawn() {
 			GameObject newEnemy = Instantiate(gameObject, new Vector3(Random.Range(-9f, 9f), 9f, 0),Quaternion.identity);

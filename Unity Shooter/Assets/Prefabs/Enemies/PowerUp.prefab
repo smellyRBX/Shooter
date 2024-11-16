@@ -185,6 +185,7 @@ MonoBehaviour:
   spawnRate: 10
   spawnTimer: 7.4658012
   spriteRenderer: {fileID: 5344425864008948262}
+  constantSpawn: 1
   powerUpID: 0
   spriteList:
   - {fileID: 2348769836299828398}
