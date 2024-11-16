@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -12,6 +11,8 @@ namespace EnemyScripts {
         public AudioClip powerUpSound;
         public AudioClip powerDownSound;
 
+        private bool _didCollide;
+        
         public override GameObject Spawn() {
             GameObject newEnemy = Instantiate(gameObject, new Vector3(Random.Range(-9f, 9f), 9f, 0),Quaternion.identity);
             
@@ -19,6 +20,7 @@ namespace EnemyScripts {
         }
 
         private void Start() {
+            _didCollide = false;
             powerUpID = Random.Range(0, spriteList.Length);
             
             Debug.Log("POWER UP:"+powerUpID);
@@ -30,7 +32,7 @@ namespace EnemyScripts {
         }
 
         public override void Update() {
-            if (!gameObject.activeSelf) {
+            if (!gameObject.activeSelf || _didCollide) {
                 return;
             }
             
@@ -45,7 +47,7 @@ namespace EnemyScripts {
             
             yield return new WaitForSeconds(5f);
             
-            AudioSource.PlayClipAtPoint(powerDownSound, transform.position);
+            AudioSource.PlayClipAtPoint(powerDownSound, Vector3.zero);
             player.IncreaseBulletCount(-num);
         }
         
@@ -54,14 +56,20 @@ namespace EnemyScripts {
             
             yield return new WaitForSeconds(5f);
             
-            AudioSource.PlayClipAtPoint(powerDownSound, transform.position);
+            AudioSource.PlayClipAtPoint(powerDownSound, Vector3.zero);
             player.speed -= num;
         }
 
         public override void OnTriggerEnter2D(Collider2D other) {
             if (!other.CompareTag("Player")) return;
+            if (_didCollide) return;
             
-            AudioSource.PlayClipAtPoint(powerUpSound, transform.position);
+            _didCollide = true;
+            foreach (var sprite in spriteList) {
+                sprite.SetActive(false);
+            }
+
+            AudioSource.PlayClipAtPoint(powerUpSound, Vector3.zero);
 
             Player player = other.GetComponent<Player>();
             switch (powerUpID) {
@@ -79,7 +87,6 @@ namespace EnemyScripts {
                     break;
             }
             
-            gameObject.SetActive(false);
             Kill(8f);
         }
     }

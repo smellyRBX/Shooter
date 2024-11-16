@@ -24,7 +24,6 @@ public class Entity : MonoBehaviour {
         
         Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         
-        gameObject.SetActive(false);
         Destroy(gameObject,delay);
     }
 }
