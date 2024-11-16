@@ -180,6 +180,6 @@ MonoBehaviour:
   lives: 3
   explosionPrefab: {fileID: 7145195255819634246, guid: b223d569ea445254b9ab8700a0ab7d03, type: 3}
   spawnRate: 3.99
-  spawnTimer: 1.3096341
+  spawnTimer: 1.6954136
   spriteRenderer: {fileID: 5344425864008948262}
   constantSpawn: 1
