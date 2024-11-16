@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -91,6 +92,15 @@ namespace EnemyScripts {
                 case 3:
                     StartCoroutine(gm.ShowPowerText("Picked up Extra Speed!"));
                     StartCoroutine(SpeedPowerUp(player,5));
+                    break;
+                case 4:
+                    StartCoroutine(gm.ShowPowerText("Picked up Extra Life!"));
+                    if (player.lives >= 3) {
+                        gm.AddScore(1);
+                    }
+
+                    player.lives = Math.Clamp(player.lives + 1,0,3);
+
                     break;
             }
             
