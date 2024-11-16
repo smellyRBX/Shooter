@@ -21,13 +21,13 @@ public class GameManager : MonoBehaviour {
 	
 	// Start is called before the first frame update
 	private void Start() {
-		//AudioSource.PlayClipAtPoint(music, player.transform.position);
+		AudioSource.PlayClipAtPoint(music, Vector3.zero);
 		gameOverText.SetActive(false);
 		restartText.SetActive(false);
 		
 		gameOver = false;
 		
-		GameObject playerObj = Instantiate(player, transform.position, Quaternion.identity);
+		GameObject playerObj = Instantiate(player, Vector3.zero, Quaternion.identity);
 		_playerData = playerObj.GetComponent<Player>();
 		_playerData.lives = 3;
 		
