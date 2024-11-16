@@ -67,8 +67,6 @@ public class GameManager : MonoBehaviour {
 			enemyData.spawnTimer -= deltaTime;
 			
 			if (enemyData.spawnTimer <= 0) {
-				print(_timer/100f);
-
 				float addTimer = (enemyData.spawnRate + Random.Range(-2f, 2f)) - (_timer / 100f);
 				if (enemyData.constantSpawn) {
 					addTimer = enemyData.spawnRate;
