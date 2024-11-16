@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4aaf522c1591dd34d93da1a9dc54c987, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.40600035}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.38659576}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -111,7 +111,7 @@ Transform:
   m_GameObject: {fileID: 5117848911870012151}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.800016, y: 2.800016, z: 2.800016}
+  m_LocalScale: {x: 6.706874, y: 6.706874, z: 6.706874}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 914167500150351540}
@@ -141,6 +141,6 @@ MonoBehaviour:
   lives: 1
   explosionPrefab: {fileID: 8758853470596499124, guid: 13167d69a20153d41905aa007b5bc39d, type: 3}
   spawnRate: 0.1
-  spawnTimer: 0.0035610823
+  spawnTimer: 0.08132351
   spriteRenderer: {fileID: 2877222082291262125}
   constantSpawn: 1

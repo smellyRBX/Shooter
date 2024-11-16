@@ -24,8 +24,6 @@ namespace EnemyScripts {
             _didCollide = false;
             powerUpID = Random.Range(0, spriteList.Length);
             
-            Debug.Log("POWER UP:"+powerUpID);
-            
             for (int i = 0; i < spriteList.Length; i++) {
                 GameObject sprite = spriteList[i];
                 sprite.SetActive(i == powerUpID);
