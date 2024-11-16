@@ -14,14 +14,11 @@ public class GameManager : MonoBehaviour {
 	public GameObject restartText;
 	public TextMeshProUGUI livesText;
 
-	public AudioClip music;
-
 	private int _score;
 	private Player _playerData;
 	
 	// Start is called before the first frame update
 	private void Start() {
-		AudioSource.PlayClipAtPoint(music, Vector3.zero);
 		gameOverText.SetActive(false);
 		restartText.SetActive(false);
 		
