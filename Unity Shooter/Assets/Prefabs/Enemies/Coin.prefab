@@ -179,8 +179,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lives: 3
   explosionPrefab: {fileID: 7145195255819634246, guid: b223d569ea445254b9ab8700a0ab7d03, type: 3}
-  spawnRate: 3.99
-  spawnTimer: 1.6954136
+  spawnRate: 4
+  spawnTimer: 0.1
   spriteRenderer: {fileID: 5344425864008948262}
   constantSpawn: 1
   otherExp: {fileID: 8758853470596499124, guid: 13167d69a20153d41905aa007b5bc39d, type: 3}
