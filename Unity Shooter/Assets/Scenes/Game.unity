@@ -315,7 +315,6 @@ MonoBehaviour:
   gameOverText: {fileID: 1705723548}
   restartText: {fileID: 102421329}
   livesText: {fileID: 682511573}
-  music: {fileID: 8300000, guid: ac41d9abda44904479228d222906e7a7, type: 3}
 --- !u!1 &604431008
 GameObject:
   m_ObjectHideFlags: 0

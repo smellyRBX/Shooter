@@ -18,11 +18,13 @@ public class Entity : MonoBehaviour {
         return lives <= 0;
     }
 
-    protected virtual void Kill() {
+    protected virtual void Kill(float delay = 0f) {
         if (_died) return;
         _died = true;
         
         Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        
+        gameObject.SetActive(false);
+        Destroy(gameObject,delay);
     }
 }

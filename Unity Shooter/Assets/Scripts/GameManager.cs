@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour {
 		GameObject playerObj = Instantiate(player, Vector3.zero, Quaternion.identity);
 		_playerData = playerObj.GetComponent<Player>();
 		_playerData.lives = 3;
+		_playerData.gameManager = this;
 		
 		_score = 0;
 		AddScore(0);
