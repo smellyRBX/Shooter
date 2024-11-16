@@ -52,6 +52,10 @@ public class GameManager : MonoBehaviour {
 
 	private void CreateEnemy(float deltaTime) {
 		foreach (GameObject enemyObj in enemyList) {
+			if (gameOver && enemyObj.name != "Cloud") {
+				continue;
+			}
+			
 			Enemy enemyData = enemyObj.GetComponent<Enemy>();
 			enemyData.spawnTimer -= deltaTime;
 			
