@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using EnemyScripts;
 using TMPro;
 using UnityEngine;
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour {
 	public GameObject gameOverText;
 	public GameObject restartText;
 	public TextMeshProUGUI livesText;
+	public TextMeshProUGUI powerText;
 
 	private int _score;
 	private Player _playerData;
@@ -55,6 +57,13 @@ public class GameManager : MonoBehaviour {
 		livesText.text = "Lives: " + _playerData.lives;
 		CreateEnemy(Time.deltaTime);
 		Restart();
+	}
+
+	public IEnumerator ShowPowerText(string text) {
+		powerText.text = text;
+		powerText.gameObject.SetActive(true);
+		yield return new WaitForSeconds(2f);
+		powerText.gameObject.SetActive(false);
 	}
 
 	private void CreateEnemy(float deltaTime) {

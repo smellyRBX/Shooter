@@ -71,18 +71,25 @@ namespace EnemyScripts {
 
             AudioSource.PlayClipAtPoint(powerUpSound, Vector3.zero);
 
+            GameObject gameManager = GameObject.Find("GameManager");
+            GameManager gm = gameManager.GetComponent<GameManager>();
+
             Player player = other.GetComponent<Player>();
             switch (powerUpID) {
                 case 0:
                     player.hasShield = true;
+                    StartCoroutine(gm.ShowPowerText("Picked up shield!"));
                     break;
                 case 1:
+                    StartCoroutine(gm.ShowPowerText("Picked up Double Shot!"));
                     StartCoroutine(BulletPowerUp(player,1));
                     break;
                 case 2:
+                    StartCoroutine(gm.ShowPowerText("Picked up Triple Shot!"));
                     StartCoroutine(BulletPowerUp(player,2));
                     break;
                 case 3:
+                    StartCoroutine(gm.ShowPowerText("Picked up Extra Speed!"));
                     StartCoroutine(SpeedPowerUp(player,5));
                     break;
             }

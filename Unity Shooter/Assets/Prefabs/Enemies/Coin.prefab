@@ -183,3 +183,6 @@ MonoBehaviour:
   spawnTimer: 1.6954136
   spriteRenderer: {fileID: 5344425864008948262}
   constantSpawn: 1
+  otherExp: {fileID: 8758853470596499124, guid: 13167d69a20153d41905aa007b5bc39d, type: 3}
+  reversedExp: {fileID: 1915959440248293964, guid: 7787df2334dc6d14e91c5eb815b45e49, type: 3}
+  sprite: {fileID: 2348769836299828398}
